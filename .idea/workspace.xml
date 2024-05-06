@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ParseHelper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/SwgohggParser.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/CharStatsSeria.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/PlayerListSeria.json" afterDir="false" />
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/SwgohggParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/SwgohggParser.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +29,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ThomaTsepesh"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ThomaTsepesh/SwgohHelper.git",
+    "accountId": "10965cf6-c04f-4d60-834f-70c76bb19df0"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -133,11 +128,24 @@
       <workItem from="1714853056056" duration="3810000" />
       <workItem from="1714899979833" duration="27956000" />
       <workItem from="1714941203675" duration="4408000" />
-      <workItem from="1715014498735" duration="1353000" />
+      <workItem from="1715014498735" duration="16655000" />
     </task>
+    <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
+      <option name="closed" value="true" />
+      <created>1715015975681</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715015975681</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных" />
   </component>
 </project>

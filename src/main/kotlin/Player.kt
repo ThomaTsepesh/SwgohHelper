@@ -7,7 +7,7 @@ data class Player(
     val name: String,
     val allyCode: Int,
 //    val stats: List<Stats>
-//    val chars: List<Character>
+    val chars: List<Character>
 )
 
 @Serializable

@@ -10,22 +10,24 @@ import java.io.File
 @OptIn(ExperimentalSerializationApi::class)
 fun main() {
 //775267699u
-
+    val dataPath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\data\\"
 //    val playerList = getPlayers(849418263u)
 //    val charStats = getCharStats(849418263u, "general-grievous")
 //    println(charStats)
 
 //    println(getAllChars(849418263u))
-    val jsonAllChars = Json.encodeToString(getAllChars(849418263u))
-    File("AllCharsList.json").writeText(jsonAllChars)
+//    val jsonAllChars = Json.encodeToString(getAllChars(849418263u))
+//    File("AllCharsList.json").writeText(jsonAllChars)
 
 //    val jsonPlayer = Json.encodeToString(playerList)
 //    File("PlayerListSeria.json").writeText(jsonPlayer)
-
+//
 //    val jsonCharStat = Json.encodeToString(charStats)
 //    File("CharStatsSeria.json").writeText(jsonCharStat)
 
-
+//    val allCharsplr = getAllChars(849418263u)
+ //   val jsonCharStat = Json.encodeToString(allCharsplr)
+//    File("${dataPath}plrstatchar.json").writeText(jsonCharStat)
 }
 
 private fun getPlayers(allyCode: UInt): MutableList<Player> {
@@ -52,11 +54,10 @@ private fun getPlayers(allyCode: UInt): MutableList<Player> {
         if (playerName.isNotEmpty()) {
             val allyCode = (Regex("\\D")).replace(row.select("a").attr("href"), "").toInt()
             if (playerName.isNotEmpty()) {
-
-                val player = Player(playerName, allyCode)
+                val chars = getAllChars(allyCode.toUInt())
+                val player = Player(playerName, allyCode, chars)
                 println(player)
                 playerList.add(player)
-                //}
             }
         }
     }

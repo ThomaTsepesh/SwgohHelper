@@ -1,8 +1,6 @@
 package com.tsepesh.thoma
 
 import kotlinx.coroutines.*
-import java.io.File
-import java.nio.file.Paths
 
 fun main() = runBlocking {
     val sheetsService = GoogleSheets()

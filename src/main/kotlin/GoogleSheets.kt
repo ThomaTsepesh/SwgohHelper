@@ -10,7 +10,7 @@ import java.io.FileInputStream
 
 class GoogleSheets {
     private val applicationName = "Google Sheets API Kotlin Quickstart"
-    private val jsonPath = ""
+    private val jsonPath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\SwgohHelperToken.json"
     private val scopes = listOf(SheetsScopes.SPREADSHEETS)
     private lateinit var service: Sheets
 

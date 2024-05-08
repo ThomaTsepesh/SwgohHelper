@@ -12,22 +12,20 @@ object ParserHelper {
         return files?.map { it.path } ?: emptyList()
     }
 
-    fun parseCsvFile(path: String): List<List<String>> {
+    fun parseCsvFile(str: String): List<List<String>> {
         val result = mutableListOf<List<String>>()
 
         try {
-            val reader = BufferedReader(FileReader(path))
-            var line: String? = reader.readLine()
-            while (line != null) {
+            var lines = str.split("\n")
+            for (line in lines) {
                 if (line.isBlank()) {
                     continue
                 }
 
                 val values = line.split(",")
                 result.add(values)
-                line = reader.readLine()
             }
-        } catch (e: IOException) {
+        } catch (e: Exception) {
             println("error parsing the CSV file: ${e.message}")
             throw e
         }

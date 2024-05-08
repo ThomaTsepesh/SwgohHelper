@@ -36,3 +36,13 @@ data class Stats(
     val omics: Int,
     val zetas: Int
 )
+
+@Serializable
+data class Team(
+    val charList: MutableList<String> = mutableListOf()
+){
+    fun addChar(charName: String){
+        if (charList.size > 5)
+            charList.add(charName)
+    }
+}

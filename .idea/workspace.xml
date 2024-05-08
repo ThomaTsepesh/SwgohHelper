@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="в Player теперь передается List&lt;Character&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AllCharsList.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/data/AllCharsList.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ParseHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ParseHelper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/SwgohggParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/SwgohggParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WAT-ready-1713686218880.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/CharStatsSeria.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/plrstatchar.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +35,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ThomaTsepesh"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ThomaTsepesh&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ThomaTsepesh/SwgohHelper.git",
-    "accountId": "10965cf6-c04f-4d60-834f-70c76bb19df0"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ThomaTsepesh/SwgohHelper.git&quot;,
+    &quot;accountId&quot;: &quot;10965cf6-c04f-4d60-834f-70c76bb19df0&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -81,13 +87,14 @@
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\kotlin\data" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\kotlin" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.SwgohggParserKt">
+  <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tsepesh.thoma.MainKt" />
       <module name="SwgohHelper.main" />
@@ -104,8 +111,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.SwgohggParserKt" />
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.SwgohggParserKt" />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +136,7 @@
       <workItem from="1714899979833" duration="27956000" />
       <workItem from="1714941203675" duration="4408000" />
       <workItem from="1715014498735" duration="16655000" />
+      <workItem from="1715187497622" duration="8985000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -138,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715015975681</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="в Player теперь передается List&lt;Character&gt;">
+      <option name="closed" value="true" />
+      <created>1715116898145</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715116898145</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +162,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных" />
-    <option name="LAST_COMMIT_MESSAGE" value="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных" />
+    <MESSAGE value="в Player теперь передается List&lt;Character&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="в Player теперь передается List&lt;Character&gt;" />
   </component>
 </project>

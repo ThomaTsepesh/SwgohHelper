@@ -1,6 +1,9 @@
 package com.tsepesh.thoma
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -59,12 +62,16 @@ private suspend fun getPlayers(allyCode: UInt): MutableList<Player> {
             for (row in rows) {
                 val playerName = row.select("td").attr("data-sort-value")
                 if (playerName.isNotEmpty()) {
-                    val allyCode = (Regex("\\D")).replace(row.select("a").attr("href"), "").toInt()
-                    if (playerName.isNotEmpty()) {
-                        val chars = getAllChars(allyCode.toUInt())
-                        val player = Player(playerName, allyCode, chars)
-                        println(player)
-                        playerList.add(player)
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val allyCode = (Regex("\\D")).replace(row.select("a").attr("href"), "").toInt()
+                        if (playerName.isNotEmpty()) {
+                            val chars = getAllChars(allyCode.toUInt())
+                            val player = Player(playerName, allyCode, chars)
+                            println(player)
+                            synchronized(playerList) {
+                                playerList.add(player)
+                            }
+                        }
                     }
                 }
             }
@@ -78,7 +85,7 @@ private suspend fun getPlayers(allyCode: UInt): MutableList<Player> {
             }
         }
     }
-
+    delay(1000000)
     return playerList
 }
 

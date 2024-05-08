@@ -4,9 +4,9 @@ import kotlinx.coroutines.*
 
 fun main() = runBlocking {
     val sheetsService = GoogleSheets()
-    val range = "Fulcrum"
+    val range = "Geonosians"
     val spreadsheetId = "11mh87CxIl6NqAcqAtV_5IwQ-3ja4iDn5Gq8rwIv7eEU"
-    val filePath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\data\\PlayerListSeria.json"
+    val filePath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\PlayerList.json"
     while (true){
         println("\n\nВыберите функцию")
         println("1. Добавить тиму")
@@ -31,10 +31,14 @@ fun main() = runBlocking {
                         }
                     }
                 }
-
-
-                val csv = JsonToCsvConverter.convertTeam(filePath, team)
+                val data = ParserHelper.parseCsvFile(JsonToCsvConverter.convertTeam(filePath, team))
+                if (data.isNotEmpty()) {
+                    sheetsService.appendData(spreadsheetId, range, data)
+                } else {
+                    println("No data found in file.")
+                }
             }
+
             2 -> {
                 println("   Введите имя чара")
                 val charName = readln()

@@ -51,8 +51,40 @@ class GoogleSheets {
 
         println("Data updated")
     }
+    fun appendData(spreadsheetId: String, range: String, text: String) {
+        val values = listOf(listOf(text))
+        val valueRange = ValueRange().setValues(values)
+        val appendRequest = service.spreadsheets().values().append(spreadsheetId, range, valueRange)
+        appendRequest.valueInputOption = "USER_ENTERED"
+        appendRequest.execute()
+
+        println("Data updated")
+    }
     companion object {
         private val HTTP_TRANSPORT = NetHttpTransport()
         private val JSON_FACTORY = JacksonFactory.getDefaultInstance()
     }
+
+    fun getSheetId(spreadsheetId: String, sheetName: String): Int? {
+        val response = service.spreadsheets().get(spreadsheetId).execute()
+        val sheet = response.sheets?.find { it.properties?.title == sheetName }
+        return sheet?.properties?.sheetId
+    }
+
+    fun mergeCells(spreadsheetId: String, sheetId: Int, startRowIndex: Int, endRowIndex: Int, startColumnIndex: Int, endColumnIndex: Int) {
+        val mergeCellsRequest = MergeCellsRequest()
+        mergeCellsRequest.range = GridRange()
+        mergeCellsRequest.range.sheetId = sheetId
+        mergeCellsRequest.range.startRowIndex = startRowIndex
+        mergeCellsRequest.range.endRowIndex = endRowIndex
+        mergeCellsRequest.range.startColumnIndex = startColumnIndex
+        mergeCellsRequest.range.endColumnIndex = endColumnIndex
+        mergeCellsRequest.mergeType = "MERGE_ALL"
+
+        val request = Request().setMergeCells(mergeCellsRequest)
+        val batchUpdateRequest = BatchUpdateSpreadsheetRequest().setRequests(listOf(request))
+
+        service.spreadsheets().batchUpdate(spreadsheetId, batchUpdateRequest).execute()
+    }
+
 }

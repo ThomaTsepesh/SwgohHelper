@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="прикрутил многопоточность">
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="прикрутил функционал добавления в таблицу">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/JsonToCsvConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/JsonToCsvConverter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ParseHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ParseHelper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/SwgohggCrawler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/SwgohggCrawler.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,6 +138,8 @@
       <workItem from="1715242936637" duration="370000" />
       <workItem from="1715251330823" duration="99000" />
       <workItem from="1715253456697" duration="9039000" />
+      <workItem from="1715270339563" duration="4156000" />
+      <workItem from="1715274616189" duration="5112000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -179,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715205829770</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="прикрутил функционал добавления в таблицу">
+      <option name="closed" value="true" />
+      <created>1715270059534</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715270059534</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +201,7 @@
     <MESSAGE value="допилил добавление в таблицы, конвертор из json в csv и дата класс команд" />
     <MESSAGE value="обработал дисконект" />
     <MESSAGE value="прикрутил многопоточность" />
-    <option name="LAST_COMMIT_MESSAGE" value="прикрутил многопоточность" />
+    <MESSAGE value="прикрутил функционал добавления в таблицу" />
+    <option name="LAST_COMMIT_MESSAGE" value="прикрутил функционал добавления в таблицу" />
   </component>
 </project>

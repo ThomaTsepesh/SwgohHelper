@@ -12,8 +12,11 @@ suspend fun main() {
     val filePath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\PlayerList.json"
 
     while (true) {
-        println("1. Добавить таблицу \n" +
-                "2. Собрать базу")
+        println(
+            "\n1. Добавить в таблицу \n" +
+                    "2. Собрать базу\n" +
+                    "3. Создать отряд"
+        )
         when (readln().toInt()) {
             1 -> {
                 println(
@@ -65,10 +68,6 @@ suspend fun main() {
                                 2 -> {
                                     break
                                 }
-
-                                else -> {
-                                    println("неверный параметр, попробуйте снова")
-                                }
                             }
                         }
                         val data = ParserHelper.parseCsvFile(JsonToCsvConverter.convertTeam(filePath, team))
@@ -112,9 +111,53 @@ suspend fun main() {
                     }
                 }
             }
+
             2 -> {
                 val file = Json.encodeToString(SwgohggParser.getPlayers(849418263u))
                 File("AllCharList.json").writeText(file)
+            }
+
+            3 -> {
+                while (true) {
+                    println(
+                        "1. Добавить отряд\n" +
+                                "2. Назад"
+                    )
+                    val team = Team()
+                    when (readln().toInt()) {
+
+                        1 -> {
+                            println("\n[")
+
+                            while (team.charList.size < 5) {
+                                println("1. Добавить персонажа\n" +
+                                        "2. Подтвердить")
+                                val input = readln().toInt()
+                                when (input) {
+                                    1 -> {
+                                        println("Введите имя чара")
+                                        val string = readln()
+                                        team.addChar(string)
+                                        println("   Добавлен: ${string}\n")
+                                    }
+                                    2 -> {
+                                        break
+                                    }
+                                }
+                            }
+                            println("\n]")
+                        }
+
+                        2 -> {
+                            break
+                        }
+
+                        else -> {
+                            println("Invalid option")
+                            continue
+                        }
+                    }
+                }
             }
         }
     }

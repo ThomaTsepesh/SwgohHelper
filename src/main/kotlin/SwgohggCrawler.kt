@@ -64,7 +64,7 @@ class SwgohggParser {
                     }
                 }
             }
-            delay(780000)
+            delay(700000)
             return playerList
         }
 

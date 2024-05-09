@@ -21,7 +21,6 @@ class JsonToCsvConverter {
                     }
                 }
             }
-
             return csv
         }
 
@@ -30,15 +29,15 @@ class JsonToCsvConverter {
             val players = Json.decodeFromString<List<Player>>(json)
             val csv = buildString {
                 appendLine(", , ")
-                appendLine("name,allyCode,idName,stars,gear,omic,zeta")
-                for (charName in team.charList)
+                appendLine("name,allyCode,${team.charList.flatMap { listOf("stars", "gear", "omic", "zeta") }.joinToString(",")}")
                 players.forEach { player ->
-                    val char: Character = player.chars.find { c -> c.equals(charName) }!!
-                    appendLine("${player.name},${player.allyCode},${char.idName},${char.stars},${char.gear},${char.omic},${char.zeta}")
-
+                    val charStats = team.charList.map { charName ->
+                        val char: Character? = player.chars.find { c -> c.idName.equals(charName) }
+                        char?.getCharStats() ?: ",,,"
+                    }.joinToString(",")
+                    appendLine("${player.name},${player.allyCode},${charStats}")
                 }
             }
-
             return csv
         }
 

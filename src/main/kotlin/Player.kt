@@ -19,8 +19,11 @@ data class Character(
     val zeta: Int,
 //    val skills: List<Skill>,
 //    val mods: List<Mod>
-)
-
+) {
+    fun getCharStats(): String {
+        return "${stars},${gear},${omic},${zeta}"
+    }
+}
 @Serializable
 data class Skill(
     val n: String
@@ -42,7 +45,7 @@ data class Team(
     val charList: MutableList<String> = mutableListOf()
 ){
     fun addChar(charName: String){
-        if (charList.size > 5)
+        if (charList.size < 5)
             charList.add(charName)
     }
 }

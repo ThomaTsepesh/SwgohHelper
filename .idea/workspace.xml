@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="в Player теперь передается List&lt;Character&gt;">
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="прикрутил многопоточность">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AllCharsList.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/data/AllCharsList.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/JsonToCsvConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/JsonToCsvConverter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ParseHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ParseHelper.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/WAT-ready-1713686218880.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/CharStatsSeria.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/plrstatchar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/SwgohggCrawler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/SwgohggCrawler.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +57,7 @@
   &quot;keyToString&quot;: {
     &quot;Gradle.Build SwgohHelper.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SwgohggCrawlerKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.SwgohggParserKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -102,8 +100,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SwgohggParserKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tsepesh.thoma.SwgohggParserKt" />
+    <configuration name="SwgohggCrawlerKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tsepesh.thoma.SwgohggCrawlerKt" />
       <module name="SwgohHelper.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,7 +110,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.SwgohggParserKt" />
+        <item itemvalue="Kotlin.SwgohggCrawlerKt" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +134,10 @@
       <workItem from="1714899979833" duration="27956000" />
       <workItem from="1714941203675" duration="4408000" />
       <workItem from="1715014498735" duration="16655000" />
-      <workItem from="1715187497622" duration="8985000" />
+      <workItem from="1715187497622" duration="17753000" />
+      <workItem from="1715242936637" duration="370000" />
+      <workItem from="1715251330823" duration="99000" />
+      <workItem from="1715253456697" duration="9039000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -154,7 +155,31 @@
       <option name="project" value="LOCAL" />
       <updated>1715116898145</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="допилил добавление в таблицы, конвертор из json в csv и дата класс команд">
+      <option name="closed" value="true" />
+      <created>1715197101849</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715197101849</updated>
+    </task>
+    <task id="LOCAL-00004" summary="обработал дисконект">
+      <option name="closed" value="true" />
+      <created>1715203203418</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715203203418</updated>
+    </task>
+    <task id="LOCAL-00005" summary="прикрутил многопоточность">
+      <option name="closed" value="true" />
+      <created>1715205829770</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715205829770</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +188,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных" />
     <MESSAGE value="в Player теперь передается List&lt;Character&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="в Player теперь передается List&lt;Character&gt;" />
+    <MESSAGE value="допилил добавление в таблицы, конвертор из json в csv и дата класс команд" />
+    <MESSAGE value="обработал дисконект" />
+    <MESSAGE value="прикрутил многопоточность" />
+    <option name="LAST_COMMIT_MESSAGE" value="прикрутил многопоточность" />
   </component>
 </project>

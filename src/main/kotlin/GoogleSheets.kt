@@ -5,7 +5,7 @@ import com.google.api.client.http.javanet.NetHttpTransport
 import com.google.api.client.json.jackson2.JacksonFactory
 import com.google.api.services.sheets.v4.Sheets
 import com.google.api.services.sheets.v4.SheetsScopes
-import com.google.api.services.sheets.v4.model.ValueRange
+import com.google.api.services.sheets.v4.model.*
 import java.io.FileInputStream
 
 class GoogleSheets {
@@ -29,6 +29,19 @@ class GoogleSheets {
 
         println("Google initialized successfully")
     }
+    fun createSheet(spreadsheetId: String, sheetTitle: String) {
+        val addSheetRequest = AddSheetRequest().setProperties(
+            SheetProperties().setTitle(sheetTitle)
+        )
+
+        val request = Request().setAddSheet(addSheetRequest)
+        val updateRequest = BatchUpdateSpreadsheetRequest().setRequests(listOf(request))
+
+        service.spreadsheets().batchUpdate(spreadsheetId, updateRequest).execute()
+
+        println("Sheet created")
+    }
+
 
     fun appendData(spreadsheetId: String, range: String, values: List<List<Any>>) {
         val valueRange = ValueRange().setValues(values)

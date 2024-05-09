@@ -85,7 +85,7 @@ private suspend fun getPlayers(allyCode: UInt): MutableList<Player> {
             }
         }
     }
-    delay(1000000)
+    delay(780000)
     return playerList
 }
 

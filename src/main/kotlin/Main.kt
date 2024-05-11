@@ -139,6 +139,7 @@ suspend fun main() {
             "2" -> {
                 val file = Json.encodeToString(SwgohggParser.getPlayers(849418263u))
                 File("${dataPath}\\GuildPlayers${LocalDate.now()}.json").writeText(file)
+                println("База GuildPlayers${LocalDate.now()} сохранена ")
             }
 
             "3" -> {

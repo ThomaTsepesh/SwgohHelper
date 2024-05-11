@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="прикрутил функционал добавления в таблицу">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlayerList1.json" beforeDir="false" />
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/SwgohggCrawler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/SwgohggCrawler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/AllCharsList.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/PlayerListSeria.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +140,7 @@
       <workItem from="1715289397495" duration="365000" />
       <workItem from="1715318815759" duration="160000" />
       <workItem from="1715347435110" duration="2089000" />
-      <workItem from="1715403977277" duration="3448000" />
+      <workItem from="1715403977277" duration="3774000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -211,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715289263524</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="допили скачивание базы. допили статы у игроков(количество омиков и зет)">
+      <option name="closed" value="true" />
+      <created>1715407625824</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715407625824</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +227,8 @@
     <MESSAGE value="обработал дисконект" />
     <MESSAGE value="прикрутил многопоточность" />
     <MESSAGE value="прикрутил функционал добавления в таблицу" />
-    <option name="LAST_COMMIT_MESSAGE" value="прикрутил функционал добавления в таблицу" />
+    <MESSAGE value="допили скачивание базы. допили статы у игроков(количество омиков и зет)" />
+    <MESSAGE value="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)" />
+    <option name="LAST_COMMIT_MESSAGE" value="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)" />
   </component>
 </project>

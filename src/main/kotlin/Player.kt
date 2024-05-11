@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 data class Player(
     val name: String,
     val allyCode: Int,
-//    val stats: List<Stats>
+    val stats: Stats,
     val chars: List<Character>
 )
 

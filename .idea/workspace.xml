@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="прикрутил функционал добавления в таблицу">
-      <change beforePath="$PROJECT_DIR$/PlayerList.json" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerList1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerList1.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/SwgohggCrawler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/SwgohggCrawler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/AllCharsList.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/PlayerListSeria.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +141,11 @@
       <workItem from="1715253456697" duration="9039000" />
       <workItem from="1715270339563" duration="4156000" />
       <workItem from="1715274616189" duration="10857000" />
+      <workItem from="1715289170060" duration="101000" />
+      <workItem from="1715289397495" duration="365000" />
+      <workItem from="1715318815759" duration="160000" />
+      <workItem from="1715347435110" duration="2089000" />
+      <workItem from="1715403977277" duration="3448000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -194,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715282455581</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="прикрутил функционал добавления в таблицу">
+      <option name="closed" value="true" />
+      <created>1715289263524</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715289263524</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

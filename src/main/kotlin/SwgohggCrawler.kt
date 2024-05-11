@@ -1,9 +1,6 @@
 package com.tsepesh.thoma
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import org.jsoup.HttpStatusException
 import org.jsoup.Jsoup
 import java.io.IOException
@@ -19,6 +16,7 @@ class SwgohggParser {
 
             val playerList = mutableListOf<Player>()
             var url = "https://swgoh.gg/p/$allyCode"
+            val coroutines = mutableListOf<Job>()
             var attempt = 0
             while (attempt < maxAttempts) {
                 try {
@@ -40,17 +38,19 @@ class SwgohggParser {
                     for (row in rows) {
                         val playerName = row.select("td").attr("data-sort-value")
                         if (playerName.isNotEmpty()) {
-                            CoroutineScope(Dispatchers.IO).launch {
+                            val coroutine = CoroutineScope(Dispatchers.IO).launch {
                                 val allyCode = (Regex("\\D")).replace(row.select("a").attr("href"), "").toInt()
                                 if (playerName.isNotEmpty()) {
                                     val chars = getAllChars(allyCode.toUInt())
-                                    val player = Player(playerName, allyCode, chars)
+                                    val stats = getPlayerStats(allyCode.toUInt())
+                                    val player = Player(playerName, allyCode, stats, chars)
                                     println(player)
                                     synchronized(playerList) {
                                         playerList.add(player)
                                     }
                                 }
                             }
+                            coroutines.add(coroutine)
                         }
                     }
                     break
@@ -64,7 +64,7 @@ class SwgohggParser {
                     }
                 }
             }
-            delay(700000)
+            coroutines.joinAll()
             return playerList
         }
 
@@ -190,6 +190,17 @@ class SwgohggParser {
             character = Character(charName, stars, gear, omic, zeta)
             println(character)
             return character
+        }
+
+        suspend fun getPlayerStats(allyCode: UInt): Stats{
+            val url = "https://swgoh.gg/p/${allyCode.toInt()}"
+            val doc = Jsoup.connect(url).get()
+            val omics = doc.select("body > div.container.p-t-md > div.content-container >" +
+                    " div.content-container-primary.character-list > ul > li:nth-child(3) > div > div > ul > li:nth-child(3) > h5 > a").text().toInt()
+            val zetas = doc.select("body > div.container.p-t-md > div.content-container >" +
+                    " div.content-container-primary.character-list > ul > li:nth-child(3) > div > div > ul > li:nth-child(2) > h5 > a").text().toInt()
+            return Stats(omics, zetas)
+
         }
     }
 }

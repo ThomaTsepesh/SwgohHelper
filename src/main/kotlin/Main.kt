@@ -3,40 +3,61 @@ package com.tsepesh.thoma
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.time.LocalDate
 
 suspend fun main() {
     val sheetsService = GoogleSheets()
     var range: String
     var addSheet = false
     val spreadsheetId = "11mh87CxIl6NqAcqAtV_5IwQ-3ja4iDn5Gq8rwIv7eEU"
-    val filePath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\PlayerList.json"
+    var filePath = "Не задана"
+    val dataPath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\data"
+
+    //849418263
+
+    // не сохраняет базу, пока программа запущена
+    // поменять все пути файлов под себя. для меня пока и такие нормально
+
+    println("\nВведите дату нужной базы(пример даты: 2024-05-03)\n")
+    val input = readln()
+    if (Files.exists( Paths.get("${dataPath}\\GuildPlayers${input}.json")) ) {
+        filePath = "${dataPath}\\GuildPlayers${input}.json"
+        println("Выбрана $filePath")
+    } else {
+        println("Файл не существует")
+    }
 
     while (true) {
+        println("Текущая база: $filePath")
+
         println(
             "\n1. Добавить в таблицу \n" +
                     "2. Собрать базу\n" +
-                    "3. Создать отряд"
+                    "3. Создать отряд\n" +
+                    "4. выбрать другую базу"
         )
-        when (readln().toInt()) {
-            1 -> {
+        when (readln()) {
+            "1" -> {
                 println(
                     "1. Добавить в существующую таблицу\n" +
                             "2. Добавить в новую таблицу\n" +
                             "3. Закрыть"
                 )
-                when (readlnOrNull()?.toInt()) {
-                    1 -> {
+                when (readln()) {
+                    "1" -> {
                         println("   Введите название таблицы")
                         range = readln()
                     }
 
-                    2 -> {
+                    "2" -> {
                         println("   Введите название таблицы")
                         range = readln()
                         addSheet = true
                     }
 
-                    3 -> {
+                    "3" -> {
                         break
                     }
 
@@ -52,8 +73,8 @@ suspend fun main() {
                             "   2. Добавить одного чара\n"
                 )
 
-                when (readln().toInt()) {
-                    1 -> {
+                when (readln()) {
+                    "1" -> {
                         val team = Team()
                         for (i in 1..5) {
                             println("   Добавьте персонажей\n 1.Добавить \n 2.Выход")
@@ -96,7 +117,7 @@ suspend fun main() {
                         }
                     }
 
-                    2 -> {
+                    "2" -> {
                         println("   Введите имя чара")
                         val charName = readln()
                         val data = ParserHelper.parseCsvFile(JsonToCsvConverter.convertChar(filePath, charName))
@@ -109,24 +130,27 @@ suspend fun main() {
                             println("No data found.")
                         }
                     }
+                    else ->{
+                        println("Invalid option")
+                    }
                 }
             }
 
-            2 -> {
+            "2" -> {
                 val file = Json.encodeToString(SwgohggParser.getPlayers(849418263u))
-                File("AllCharList.json").writeText(file)
+                File("${dataPath}\\GuildPlayers${LocalDate.now()}.json").writeText(file)
             }
 
-            3 -> {
+            "3" -> {
                 while (true) {
                     println(
                         "1. Добавить отряд\n" +
                                 "2. Назад"
                     )
                     val team = Team()
-                    when (readln().toInt()) {
+                    when (readln()) {
 
-                        1 -> {
+                        "1" -> {
                             println("\n[")
 
                             while (team.charList.size < 5) {
@@ -148,7 +172,7 @@ suspend fun main() {
                             println("\n]")
                         }
 
-                        2 -> {
+                        "2" -> {
                             break
                         }
 
@@ -158,6 +182,19 @@ suspend fun main() {
                         }
                     }
                 }
+            }
+            "4" ->{
+                println("Введите дату нужной базы(пример даты: 2024-05-03)\n")
+                val input = readln()
+                if (Files.exists( Paths.get("${dataPath}\\GuildPlayers${input}.json")) ) {
+                    filePath = "${dataPath}\\GuildPlayers${input}.json"
+                    println("Выбрана $filePath")
+                } else {
+                    println("Файл не существует")
+                }
+            }
+            else -> {
+                println("Invalid option")
             }
         }
     }

@@ -7,7 +7,7 @@ import java.io.IOException
 import java.net.ConnectException
 
 
-class SwgohggParser {
+class CrawlerSWgohGG {
 
     companion object {
         const val maxAttempts = 5

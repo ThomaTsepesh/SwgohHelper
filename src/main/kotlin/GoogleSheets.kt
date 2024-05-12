@@ -29,6 +29,7 @@ class GoogleSheets {
 
         println("Google initialized successfully")
     }
+
     fun createSheet(spreadsheetId: String, sheetTitle: String) {
         val addSheetRequest = AddSheetRequest().setProperties(
             SheetProperties().setTitle(sheetTitle)
@@ -85,6 +86,28 @@ class GoogleSheets {
         val batchUpdateRequest = BatchUpdateSpreadsheetRequest().setRequests(listOf(request))
 
         service.spreadsheets().batchUpdate(spreadsheetId, batchUpdateRequest).execute()
+    }
+    fun overwriteData(spreadsheetId: String, range: String, values: List<List<Any>>) {
+        val valueRange = ValueRange().setValues(values)
+        val updateRequest = service.spreadsheets().values().update(spreadsheetId, range, valueRange)
+        updateRequest.valueInputOption = "USER_ENTERED"
+        updateRequest.execute()
+
+        println("Data overwritten")
+    }
+
+    fun clearSheet(spreadsheetId: String, range: String) {
+        val clearRequest = service.spreadsheets().values().clear(spreadsheetId, range, ClearValuesRequest())
+        clearRequest.execute()
+
+        println("Sheet cleared")
+    }
+
+    fun replaceData(spreadsheetId: String, range: String, values: List<List<Any>>) {
+        clearSheet(spreadsheetId, range)
+        appendData(spreadsheetId, range, values)
+
+        println("Data replaced")
     }
 
 }

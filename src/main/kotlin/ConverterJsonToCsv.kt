@@ -1,10 +1,9 @@
 package com.tsepesh.thoma
 
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import java.io.File
 
-class JsonToCsvConverter {
+class ConverterJsonToCsv {
 
     companion object {
 

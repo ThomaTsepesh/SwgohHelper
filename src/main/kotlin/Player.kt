@@ -23,6 +23,12 @@ data class Character(
     fun getCharStats(): String {
         return "${stars},${gear},${omic},${zeta}"
     }
+    override fun toString(): String {
+        return "$idName: Stars($stars), ${if(isRelic(gear)) "Relict(${gear.toInt()})" else "Gear($gear)"} Omics($omic), Zetas($zeta)"
+    }
+    fun isRelic(gear: String): Boolean{
+        return gear.all { it.isDigit() }
+    }
 }
 @Serializable
 data class Skill(

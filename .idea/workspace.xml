@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-    </list>
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +49,9 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Gradle.Build SwgohHelper.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SWHelperBotKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.SwgohggCrawlerKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.SwgohggParserKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -81,16 +80,23 @@
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\kotlin\bot" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\kotlin\data" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\kotlin" />
-      <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
+  <component name="RunManager" selected="Kotlin.SWHelperBotKt">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tsepesh.thoma.MainKt" />
+      <module name="SwgohHelper.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SWHelperBotKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tsepesh.thoma.bot.SWHelperBotKt" />
       <module name="SwgohHelper.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,6 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.SWHelperBotKt" />
         <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.SwgohggCrawlerKt" />
       </list>
@@ -140,7 +147,12 @@
       <workItem from="1715289397495" duration="365000" />
       <workItem from="1715318815759" duration="160000" />
       <workItem from="1715347435110" duration="2089000" />
-      <workItem from="1715403977277" duration="3774000" />
+      <workItem from="1715403977277" duration="3837000" />
+      <workItem from="1715441810123" duration="10669000" />
+      <workItem from="1715513175732" duration="11317000" />
+      <workItem from="1715525283215" duration="2576000" />
+      <workItem from="1715530703441" duration="7690000" />
+      <workItem from="1715541527494" duration="22000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -214,11 +226,42 @@
       <option name="project" value="LOCAL" />
       <updated>1715407625824</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)">
+      <option name="closed" value="true" />
+      <created>1715407831021</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715407831021</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных" />

@@ -20,9 +20,11 @@ suspend fun main() {
     // не сохраняет базу, пока программа запущена
     // поменять все пути файлов под себя. для меня пока и такие нормально
 
+
     println("\nВведите дату нужной базы(пример даты: 2024-05-03)\n")
+
     val input = readln()
-    if (Files.exists( Paths.get("${dataPath}\\GuildPlayers${input}.json")) ) {
+    if (Files.exists(Paths.get("${dataPath}\\GuildPlayers${input}.json"))) {
         filePath = "${dataPath}\\GuildPlayers${input}.json"
         println("Выбрана $filePath")
     } else {
@@ -91,7 +93,7 @@ suspend fun main() {
                                 }
                             }
                         }
-                        val data = ParserHelper.parseCsvFile(JsonToCsvConverter.convertTeam(filePath, team))
+                        val data = ParserHelper.parseCsvFile(ConverterJsonToCsv.convertTeam(filePath, team))
                         if (data.isNotEmpty()) {
                             if (addSheet) {
                                 sheetsService.createSheet(spreadsheetId, range)
@@ -120,7 +122,7 @@ suspend fun main() {
                     "2" -> {
                         println("   Введите имя чара")
                         val charName = readln()
-                        val data = ParserHelper.parseCsvFile(JsonToCsvConverter.convertChar(filePath, charName))
+                        val data = ParserHelper.parseCsvFile(ConverterJsonToCsv.convertChar(filePath, charName))
                         if (data.isNotEmpty()) {
                             if (addSheet) {
                                 sheetsService.createSheet(spreadsheetId, range)
@@ -130,14 +132,15 @@ suspend fun main() {
                             println("No data found.")
                         }
                     }
-                    else ->{
+
+                    else -> {
                         println("Invalid option")
                     }
                 }
             }
 
             "2" -> {
-                val file = Json.encodeToString(SwgohggParser.getPlayers(849418263u))
+                val file = Json.encodeToString(CrawlerSWgohGG.getPlayers(849418263u))
                 File("${dataPath}\\GuildPlayers${LocalDate.now()}.json").writeText(file)
                 println("База GuildPlayers${LocalDate.now()} сохранена ")
             }
@@ -155,8 +158,10 @@ suspend fun main() {
                             println("\n[")
 
                             while (team.charList.size < 5) {
-                                println("1. Добавить персонажа\n" +
-                                        "2. Подтвердить")
+                                println(
+                                    "1. Добавить персонажа\n" +
+                                            "2. Подтвердить"
+                                )
                                 val input = readln().toInt()
                                 when (input) {
                                     1 -> {
@@ -165,6 +170,7 @@ suspend fun main() {
                                         team.addChar(string)
                                         println("   Добавлен: ${string}\n")
                                     }
+
                                     2 -> {
                                         break
                                     }
@@ -184,16 +190,18 @@ suspend fun main() {
                     }
                 }
             }
-            "4" ->{
+
+            "4" -> {
                 println("Введите дату нужной базы(пример даты: 2024-05-03)\n")
                 val input = readln()
-                if (Files.exists( Paths.get("${dataPath}\\GuildPlayers${input}.json")) ) {
+                if (Files.exists(Paths.get("${dataPath}\\GuildPlayers${input}.json"))) {
                     filePath = "${dataPath}\\GuildPlayers${input}.json"
                     println("Выбрана $filePath")
                 } else {
                     println("Файл не существует")
                 }
             }
+
             else -> {
                 println("Invalid option")
             }

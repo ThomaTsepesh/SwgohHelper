@@ -12,7 +12,7 @@ class GoogleSheets {
     private val applicationName = "Google Sheets API Kotlin Quickstart"
     private val jsonPath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\SwgohHelperToken.json"
     private val scopes = listOf(SheetsScopes.SPREADSHEETS)
-    private lateinit var service: Sheets
+    lateinit var service: Sheets
 
     init {
         initializeService()
@@ -52,6 +52,7 @@ class GoogleSheets {
 
         println("Data updated")
     }
+
     fun appendData(spreadsheetId: String, range: String, text: String) {
         val values = listOf(listOf(text))
         val valueRange = ValueRange().setValues(values)
@@ -61,6 +62,7 @@ class GoogleSheets {
 
         println("Data updated")
     }
+
     companion object {
         private val HTTP_TRANSPORT = NetHttpTransport()
         private val JSON_FACTORY = JacksonFactory.getDefaultInstance()
@@ -87,6 +89,7 @@ class GoogleSheets {
 
         service.spreadsheets().batchUpdate(spreadsheetId, batchUpdateRequest).execute()
     }
+
     fun overwriteData(spreadsheetId: String, range: String, values: List<List<Any>>) {
         val valueRange = ValueRange().setValues(values)
         val updateRequest = service.spreadsheets().values().update(spreadsheetId, range, valueRange)

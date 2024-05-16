@@ -202,5 +202,22 @@ class CrawlerSWgohGG {
             return Stats(omics, zetas)
 
         }
+//        suspend fun getNextZeta(allyCode: UInt){
+//            val url = "https://swgoh.gg/p/${allyCode.toInt()}/what-to-zeta/"
+//            val doc = Jsoup.connect(url).get()
+//            var counter = 5
+//
+//            while (true) {
+//                val  = .select(
+//                    counter
+//                )
+//                    .attr("href")
+//                if (.isEmpty()) {
+//                    break
+//                }
+//                counter += 1
+//                println("\n$")
+//            }
+//        }
     }
 }

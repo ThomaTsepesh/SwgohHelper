@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)" />
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="жоска прихардкодил бота">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/DataHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/DataHelper.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,7 +157,14 @@
       <workItem from="1715513175732" duration="11317000" />
       <workItem from="1715525283215" duration="2576000" />
       <workItem from="1715530703441" duration="7690000" />
-      <workItem from="1715541527494" duration="22000" />
+      <workItem from="1715541527494" duration="763000" />
+      <workItem from="1715580655810" duration="161000" />
+      <workItem from="1715580966940" duration="737000" />
+      <workItem from="1715581777188" duration="287000" />
+      <workItem from="1715620664153" duration="1774000" />
+      <workItem from="1715627781708" duration="3103000" />
+      <workItem from="1715807334802" duration="698000" />
+      <workItem from="1715870478227" duration="3535000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -234,7 +246,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715407831021</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)">
+      <option name="closed" value="true" />
+      <created>1715541781897</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715541781897</updated>
+    </task>
+    <task id="LOCAL-00012" summary="жоска прихардкодил бота">
+      <option name="closed" value="true" />
+      <created>1715541837845</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715541837845</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +300,7 @@
     <MESSAGE value="прикрутил функционал добавления в таблицу" />
     <MESSAGE value="допили скачивание базы. допили статы у игроков(количество омиков и зет)" />
     <MESSAGE value="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)" />
-    <option name="LAST_COMMIT_MESSAGE" value="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)" />
+    <MESSAGE value="жоска прихардкодил бота" />
+    <option name="LAST_COMMIT_MESSAGE" value="жоска прихардкодил бота" />
   </component>
 </project>

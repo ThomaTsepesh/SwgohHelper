@@ -8,7 +8,11 @@ data class Player(
     val allyCode: Int,
     val stats: Stats,
     val chars: List<Character>
-)
+) {
+    fun getChar(charName: String): Character? {
+        return chars.firstOrNull { it.idName == charName }
+    }
+}
 
 @Serializable
 data class Character(
@@ -23,13 +27,16 @@ data class Character(
     fun getCharStats(): String {
         return "${stars},${gear},${omic},${zeta}"
     }
+
     override fun toString(): String {
-        return "$idName: Stars($stars), ${if(isRelic(gear)) "Relict(${gear.toInt()})" else "Gear($gear)"} Omics($omic), Zetas($zeta)"
+        return "$idName: Stars($stars), ${if (isRelic(gear)) "Relict(${gear.toInt()})" else "Gear($gear)"} Omics($omic), Zetas($zeta)"
     }
-    fun isRelic(gear: String): Boolean{
+
+    fun isRelic(gear: String): Boolean {
         return gear.all { it.isDigit() }
     }
 }
+
 @Serializable
 data class Skill(
     val n: String
@@ -49,8 +56,8 @@ data class Stats(
 @Serializable
 data class Team(
     val charList: MutableList<String> = mutableListOf()
-){
-    fun addChar(charName: String){
+) {
+    fun addChar(charName: String) {
         if (charList.size < 5)
             charList.add(charName)
     }

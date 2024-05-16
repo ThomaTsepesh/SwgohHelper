@@ -2,10 +2,7 @@ package com.tsepesh.thoma.bot
 import com.kotlindiscord.kord.extensions.ExtensibleBot
 import com.kotlindiscord.kord.extensions.utils.env
 import com.kotlindiscord.kord.extensions.utils.envOrNull
-import com.tsepesh.thoma.bot.extensions.AbobaExtension
-import com.tsepesh.thoma.bot.extensions.AddCharToSheet
-import com.tsepesh.thoma.bot.extensions.AddTeamToSheet
-import com.tsepesh.thoma.bot.extensions.GetCharacterStats
+import com.tsepesh.thoma.bot.extensions.*
 
 private val TOKEN = env("TOKEN")
 
@@ -22,6 +19,7 @@ suspend fun main() {
             add(::GetCharacterStats)
             add(::AddCharToSheet)
             add(::AddTeamToSheet)
+            add(::UpdateCharData)
         }
     }
     bot.start()

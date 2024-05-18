@@ -99,7 +99,7 @@ class GoogleSheets {
         println("Data overwritten")
     }
 
-    fun clearSheet(spreadsheetId: String, range: String) {
+    private fun clearSheet(spreadsheetId: String, range: String) {
         val clearRequest = service.spreadsheets().values().clear(spreadsheetId, range, ClearValuesRequest())
         clearRequest.execute()
 

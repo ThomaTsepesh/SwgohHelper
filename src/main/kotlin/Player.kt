@@ -32,20 +32,20 @@ data class Character(
         return "$idName: Stars($stars), ${if (isRelic(gear)) "Relict(${gear.toInt()})" else "Gear($gear)"} Omics($omic), Zetas($zeta)"
     }
 
-    fun isRelic(gear: String): Boolean {
+    private fun isRelic(gear: String): Boolean {
         return gear.all { it.isDigit() }
     }
 }
 
-@Serializable
-data class Skill(
-    val n: String
-)
+//@Serializable
+//data class Skill(
+//    val n: String
+//)
 
-@Serializable
-data class Mod(
-    val n: String
-)
+//@Serializable
+//data class Mod(
+//    val n: String
+//)
 
 @Serializable
 data class Stats(

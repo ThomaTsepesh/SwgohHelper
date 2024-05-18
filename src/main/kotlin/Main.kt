@@ -6,6 +6,7 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.time.LocalDate
+import kotlin.system.measureTimeMillis
 
 suspend fun main() {
     val sheetsService = GoogleSheets()
@@ -16,6 +17,8 @@ suspend fun main() {
     val dataPath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\data"
 
     //849418263
+
+    //10342
 
     // не сохраняет базу, пока программа запущена
     // поменять все пути файлов под себя. для меня пока и такие нормально
@@ -140,9 +143,13 @@ suspend fun main() {
             }
 
             "2" -> {
-                val file = Json.encodeToString(CrawlerSWgohGG.getPlayers(849418263u))
-                File("${dataPath}\\GuildPlayers${LocalDate.now()}.json").writeText(file)
-                println("База GuildPlayers${LocalDate.now()} сохранена ")
+                val elapsedTime = measureTimeMillis {
+                    val file = Json.encodeToString(CrawlerSWgohGG.getPlayers(849418263u))
+                    File("${dataPath}\\GuildPlayers${LocalDate.now()}.json").writeText(file)
+                    println("База GuildPlayers${LocalDate.now()} сохранена ")
+                }
+                println("Время выполнения: ${elapsedTime / 1000.0} секунд")
+
             }
 
             "3" -> {

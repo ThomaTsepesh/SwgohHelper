@@ -6,8 +6,7 @@ import com.tsepesh.thoma.bot.extensions.*
 
 private val TOKEN = env("TOKEN")
 
-class SWHelperBot {
-}
+class SWHelperBot
 
 suspend fun main() {
     val bot = ExtensibleBot(TOKEN){

@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="жоска прихардкодил бота">
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/DataHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/DataHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +59,15 @@
   &quot;keyToString&quot;: {
     &quot;Gradle.Build SwgohHelper.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.SWHelperBotKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.SwgohggCrawlerKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.SwgohggParserKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/1/IdeaProjects/SwgohHelper/src&quot;,
@@ -92,7 +99,10 @@
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\kotlin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.SWHelperBotKt">
+  <component name="RunManager" selected="Kotlin.MainKt">
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tsepesh.thoma.MainKt" />
       <module name="SwgohHelper.main" />
@@ -116,8 +126,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.SWHelperBotKt" />
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.SWHelperBotKt" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="Kotlin.SwgohggCrawlerKt" />
       </list>
     </recent_temporary>
@@ -165,6 +176,11 @@
       <workItem from="1715627781708" duration="3103000" />
       <workItem from="1715807334802" duration="698000" />
       <workItem from="1715870478227" duration="3535000" />
+      <workItem from="1715875393825" duration="11853000" />
+      <workItem from="1715965959648" duration="11370000" />
+      <workItem from="1716017897857" duration="3438000" />
+      <workItem from="1716053040333" duration="1116000" />
+      <workItem from="1716060260792" duration="1460000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -262,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715541837845</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать">
+      <option name="closed" value="true" />
+      <created>1715893729300</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715893729300</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +325,7 @@
     <MESSAGE value="допили скачивание базы. допили статы у игроков(количество омиков и зет)" />
     <MESSAGE value="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)" />
     <MESSAGE value="жоска прихардкодил бота" />
-    <option name="LAST_COMMIT_MESSAGE" value="жоска прихардкодил бота" />
+    <MESSAGE value="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать" />
+    <option name="LAST_COMMIT_MESSAGE" value="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать" />
   </component>
 </project>

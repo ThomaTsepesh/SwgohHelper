@@ -1,16 +1,20 @@
 package com.tsepesh.thoma
 
 import kotlinx.coroutines.*
+import kotlinx.coroutines.sync.Semaphore
 import org.jsoup.HttpStatusException
 import org.jsoup.Jsoup
 import java.io.IOException
 import java.net.ConnectException
+import java.util.concurrent.ConcurrentLinkedQueue
+import java.util.concurrent.atomic.AtomicInteger
 
 
 class CrawlerSWgohGG {
 
     companion object {
-        const val maxAttempts = 5
+        private var linkCounter = AtomicInteger(0)
+        private const val maxAttempts = 5
 
         suspend fun getPlayers(allyCode: UInt): MutableList<Player> {
 
@@ -68,12 +72,11 @@ class CrawlerSWgohGG {
             return playerList
         }
 
-        suspend fun getAllChars(allyCode: UInt): List<Character> {
-
-            val charsList = mutableListOf<Character>()
+        private suspend fun getAllChars(allyCode: UInt): List<Character> {
+            val charsList = ConcurrentLinkedQueue<Character>()
             var counter = 1
-
             var attempt = 0
+            val semaphore = Semaphore(25)
             while (attempt < maxAttempts) {
                 try {
                     val charDoc = Jsoup.connect("https://swgoh.gg/p/$allyCode/characters/").get()
@@ -82,31 +85,43 @@ class CrawlerSWgohGG {
                             "body > div.container.p-t-md > div.content-container > div.content-container-primary.character-list.char-search >" +
                                     " ul > li.media.list-group-item.p-a.collection-char-list > div > div:nth-child($counter) >" +
                                     " div > div.character-portrait.character-portrait--size-normal > a"
-                        )
-                            .attr("href")
+                        ).attr("href")
                         if (charDiv.isEmpty()) {
                             break
                         }
+
                         counter += 1
-                        println("\n$charDiv")
-                        charsList.add(getCharStats(allyCode, charDiv.substringAfterLast("/")))
+                        //println("\n$charDiv")
+                        semaphore.acquire()
+                        try {
+                            withContext(Dispatchers.IO) {
+                                linkCounter.incrementAndGet()
+                                val character = getCharStats(allyCode, charDiv.substringAfterLast("/"))
+                                charsList.add(character)
+                                delay(100)
+                            }
+                        } catch (e: Exception) {
+                            println(e.message)
+                        } finally {
+                            semaphore.release()
+                        }
                     }
-
                     break
+                } catch (e: HttpStatusException) {
+                    println("Failed to connect to URL")
+                    println(e.statusCode)
+                    println(e.message)
+                } catch (e: IOException) {
+                    println("charStat IOException $attempt")
+                    println(e.message)
                 } catch (e: ConnectException) {
-                    attempt++
-                    println("getChars attempt = $attempt")
-                    if (attempt < maxAttempts) {
-                        delay(10000)
-                    } else {
-                        throw e
-                    }
+                    println("charStat attempt $attempt")
+                    println(e.message)
                 }
-
             }
-
-            return charsList
+            return charsList.toList()
         }
+
 
         suspend fun getCharStats(allyCode: UInt, charName: String): Character {
             val url = "https://swgoh.gg/p/${allyCode.toInt()}/characters/$charName"
@@ -158,7 +173,7 @@ class CrawlerSWgohGG {
                         0
                     }
 
-                    println("player character link=$url")
+                    println("player character link=$url  counter=${linkCounter.get()}")
 
                     break
                 } catch (e: HttpStatusException) {
@@ -188,17 +203,21 @@ class CrawlerSWgohGG {
 
 
             character = Character(charName, stars, gear, omic, zeta)
-            println(character)
+            //println(character)
             return character
         }
 
-        suspend fun getPlayerStats(allyCode: UInt): Stats{
+        private suspend fun getPlayerStats(allyCode: UInt): Stats {
             val url = "https://swgoh.gg/p/${allyCode.toInt()}"
             val doc = Jsoup.connect(url).get()
-            val omics = doc.select("body > div.container.p-t-md > div.content-container >" +
-                    " div.content-container-primary.character-list > ul > li:nth-child(3) > div > div > ul > li:nth-child(3) > h5 > a").text().toInt()
-            val zetas = doc.select("body > div.container.p-t-md > div.content-container >" +
-                    " div.content-container-primary.character-list > ul > li:nth-child(3) > div > div > ul > li:nth-child(2) > h5 > a").text().toInt()
+            val omics = doc.select(
+                "body > div.container.p-t-md > div.content-container >" +
+                        " div.content-container-primary.character-list > ul > li:nth-child(3) > div > div > ul > li:nth-child(3) > h5 > a"
+            ).text().toInt()
+            val zetas = doc.select(
+                "body > div.container.p-t-md > div.content-container >" +
+                        " div.content-container-primary.character-list > ul > li:nth-child(3) > div > div > ul > li:nth-child(2) > h5 > a"
+            ).text().toInt()
             return Stats(omics, zetas)
 
         }

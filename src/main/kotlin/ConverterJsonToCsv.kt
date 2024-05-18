@@ -30,10 +30,10 @@ class ConverterJsonToCsv {
                 appendLine(", , ")
                 appendLine("name,allyCode,${team.charList.flatMap { listOf("stars", "gear", "omic", "zeta") }.joinToString(",")}")
                 players.forEach { player ->
-                    val charStats = team.charList.map { charName ->
+                    val charStats = team.charList.joinToString(",") { charName ->
                         val char: Character? = player.chars.find { c -> c.idName == charName }
                         char?.getCharStats() ?: ",,,"
-                    }.joinToString(",")
+                    }
                     appendLine("${player.name},${player.allyCode},${charStats}")
                 }
             }

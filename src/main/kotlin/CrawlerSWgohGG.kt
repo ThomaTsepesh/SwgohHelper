@@ -75,7 +75,7 @@ class CrawlerSWgohGG {
         private suspend fun getAllChars(allyCode: UInt): List<Character> {
             val charsList = ConcurrentLinkedQueue<Character>()
             var counter = 1
-            var attempt = 0
+            val attempt = 0
             val semaphore = Semaphore(25)
             while (attempt < maxAttempts) {
                 try {

@@ -4,7 +4,7 @@ import kotlinx.serialization.json.Json
 import java.io.File
 import java.time.LocalDate
 
-class DataHelper {
+class BotDataHelper {
 
     companion object {
         private const val SPREADSHEETID = "11mh87CxIl6NqAcqAtV_5IwQ-3ja4iDn5Gq8rwIv7eEU"

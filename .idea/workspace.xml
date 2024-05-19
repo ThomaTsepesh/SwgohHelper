@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать">
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="продолжаем мучать мультипоток, 144 секунды на парс сайт">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +175,7 @@
       <workItem from="1715965959648" duration="11370000" />
       <workItem from="1716017897857" duration="3438000" />
       <workItem from="1716053040333" duration="1116000" />
-      <workItem from="1716060260792" duration="1460000" />
+      <workItem from="1716060260792" duration="3493000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -286,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715893729300</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="продолжаем мучать мультипоток, 144 секунды на парс сайт">
+      <option name="closed" value="true" />
+      <created>1716062043095</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716062043095</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +329,7 @@
     <MESSAGE value="допилил скачивание базы. допилил статы у игроков(количество омиков и зет)" />
     <MESSAGE value="жоска прихардкодил бота" />
     <MESSAGE value="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать" />
-    <option name="LAST_COMMIT_MESSAGE" value="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать" />
+    <MESSAGE value="продолжаем мучать мультипоток, 144 секунды на парс сайт" />
+    <option name="LAST_COMMIT_MESSAGE" value="продолжаем мучать мультипоток, 144 секунды на парс сайт" />
   </component>
 </project>

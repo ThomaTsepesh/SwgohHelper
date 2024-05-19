@@ -4,7 +4,7 @@ import com.kotlindiscord.kord.extensions.commands.Arguments
 import com.kotlindiscord.kord.extensions.commands.converters.impl.string
 import com.kotlindiscord.kord.extensions.extensions.Extension
 import com.kotlindiscord.kord.extensions.extensions.publicSlashCommand
-import com.tsepesh.thoma.DataHelper
+import com.tsepesh.thoma.BotDataHelper
 
 class AddCharToSheet: Extension() {
     override val name = "AddCharToSheet"
@@ -14,7 +14,7 @@ class AddCharToSheet: Extension() {
             description = "add data"
             action {
 
-                DataHelper.addCharToSheet(arguments.sheetName, arguments.charName, arguments.isNewSheet.toBoolean())
+                BotDataHelper.addCharToSheet(arguments.sheetName, arguments.charName, arguments.isNewSheet.toBoolean())
                 respond {
                     content = "data has been added to the table"
                 }

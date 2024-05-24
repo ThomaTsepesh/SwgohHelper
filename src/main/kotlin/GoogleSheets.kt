@@ -13,7 +13,8 @@ class GoogleSheets {
     private val jsonPath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\SwgohHelperToken.json"
     private val scopes = listOf(SheetsScopes.SPREADSHEETS)
     lateinit var service: Sheets
-
+// hera-syndulla,captain-rex,kanan-jarrus,chopper,sabine-wren
+    //captain-phasma,first-order-executioner,first-order-tie-pilot,first-order-sf-tie-pilot,kylo-ren
     init {
         initializeService()
     }

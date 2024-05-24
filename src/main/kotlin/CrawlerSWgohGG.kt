@@ -122,12 +122,12 @@ class CrawlerSWgohGG {
             return charsList.toList()
         }
 
-
         suspend fun getCharStats(allyCode: UInt, charName: String): Character {
             val url = "https://swgoh.gg/p/${allyCode.toInt()}/characters/$charName"
 
             val character: Character
             var stars = 0
+            var charGP = 0
             var gear = "0"
             var omic = 0
             var zeta = 0
@@ -146,6 +146,8 @@ class CrawlerSWgohGG {
                         "450" -> 2
                         else -> 1
                     }
+                    charGP = doc.select("body > div.container.p-t-md > div.content-container" +
+                            " > div.content-container-primary-aside > ul > li:nth-child(1) > div > div > span").text().toInt()
                     gear =
                         if (doc.select("body > div.container.p-t-md > div.content-container > div.content-container-aside > ul > li > h5")
                                 .text().equals("Current Gear")
@@ -180,7 +182,7 @@ class CrawlerSWgohGG {
                     println("Failed to connect to URL:$url")
                     println(e.statusCode)
                     if (e.statusCode == 404) {
-                        return Character(charName, stars, gear, omic, zeta)
+                        return Character(charName, stars, charGP, gear, omic, zeta)
                     }
                 } catch (e: IOException) {
                     attempt++
@@ -202,7 +204,7 @@ class CrawlerSWgohGG {
             }
 
 
-            character = Character(charName, stars, gear, omic, zeta)
+            character = Character(charName, stars, charGP, gear, omic, zeta)
             //println(character)
             return character
         }

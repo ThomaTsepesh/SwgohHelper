@@ -13,8 +13,11 @@ suspend fun main() {
     var range: String
     var addSheet = false
     val spreadsheetId = "11mh87CxIl6NqAcqAtV_5IwQ-3ja4iDn5Gq8rwIv7eEU"
+        //"1Jo87ybi9OLDPqa3nqV44hukZZcQLQqy6hxez13kV72E"
+        // сопы "1d32Vdx92x65MUQ4dpeT-Q6lY5xJFitt8eyk5H3XcWo8" // наши
     var filePath = "Не задана"
     val dataPath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\data"
+    val allyCode = 849418263u
 
     //849418263
 
@@ -80,22 +83,26 @@ suspend fun main() {
 
                 when (readln()) {
                     "1" -> {
+//                        val team = Team()
+                        println("Введите персонажей через запятую, без пробелов.э\n")
+                        val chars = readln()
                         val team = Team()
-                        for (i in 1..5) {
-                            println("   Добавьте персонажей\n 1.Добавить \n 2.Выход")
-                            val input = readln().toInt()
-                            when (input) {
-                                1 -> {
-                                    println("Введите имя чара")
-                                    team.addChar(readln())
-                                    println("   Добавлен: ${team.charList[i - 1]}\n")
-                                }
-
-                                2 -> {
-                                    break
-                                }
-                            }
-                        }
+                        chars.split(",").forEach{str -> team.addChar(str)}
+//                        for (i in 1..5) {
+//                            println("   Добавьте персонажей\n 1.Добавить \n 2.Выход")
+//                            val input = readln().toInt()
+//                            when (input) {
+//                                1 -> {
+//                                    println("Введите имя чара")
+//                                    team.addChar(readln())
+//                                    println("   Добавлен: ${team.charList[i - 1]}\n")
+//                                }
+//
+//                                2 -> {
+//                                    break
+//                                }
+//                            }
+//                        }
                         val data = ParserHelper.parseCsvFile(ConverterJsonToCsv.convertTeam(filePath, team))
                         if (data.isNotEmpty()) {
                             if (addSheet) {
@@ -106,14 +113,14 @@ suspend fun main() {
                             val sheetId = sheetsService.getSheetId(spreadsheetId, range)
                             if (sheetId != null) {
                                 var startColumn = 2
-                                var endColumn = 6
+                                var endColumn = 7
                                 for (i in 1..team.charList.size) {
                                     sheetsService.mergeCells(spreadsheetId, sheetId, 0, 1, startColumn, endColumn)
-                                    startColumn += 4
-                                    endColumn += 4
+                                    startColumn += 5
+                                    endColumn += 5
                                 }
                             }
-                            val rangeList = listOf("C", "G", "K", "O", "S")
+                            val rangeList = listOf("C", "H", "M", "R", "W")
                             for (i in 0 until team.charList.size) {
                                 sheetsService.appendData(spreadsheetId, "${range}!${rangeList[i]}1", team.charList[i])
                             }
@@ -144,7 +151,7 @@ suspend fun main() {
 
             "2" -> {
                 val elapsedTime = measureTimeMillis {
-                    val file = Json.encodeToString(CrawlerSWgohGG.getPlayers(849418263u))
+                    val file = Json.encodeToString(CrawlerSWgohGG.getPlayers(allyCode))
                     File("${dataPath}\\GuildPlayers${LocalDate.now()}.json").writeText(file)
                     println("База GuildPlayers${LocalDate.now()} сохранена ")
                 }

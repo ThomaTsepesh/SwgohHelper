@@ -18,6 +18,7 @@ data class Player(
 data class Character(
     val idName: String,
     val stars: Int,
+    val charGP: Int,
     val gear: String,
     val omic: Int,
     val zeta: Int,
@@ -25,7 +26,7 @@ data class Character(
 //    val mods: List<Mod>
 ) {
     fun getCharStats(): String {
-        return "${stars},${gear},${omic},${zeta}"
+        return "${stars},${charGP},${gear},${omic},${zeta}"
     }
 
     override fun toString(): String {

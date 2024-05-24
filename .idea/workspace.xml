@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="гм у персонажей и пачек, дата в углу таблицы">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/ParseData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-20.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-20NME.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-21.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-23.json" afterDir="false" />
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="продолжаем мучать мультипоток, 144 секунды на парс сайт">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/BotDataHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/BotDataHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +63,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
     &quot;database.data.extractors.current.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;GPforCharacters&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/1/IdeaProjects/SwgohHelper/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -97,14 +87,14 @@
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\1\IdeaProjects\SwgohHelper" />
-      <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src" />
-      <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\kotlin\bot" />
       <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\kotlin\data" />
+      <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src" />
+      <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main" />
+      <recent name="C:\Users\1\IdeaProjects\SwgohHelper\src\main\kotlin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.SWHelperBotKt">
+  <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -131,11 +121,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.SWHelperBotKt" />
-        <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.SwgohggCrawlerKt" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
-        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.SwgohggCrawlerKt" />
       </list>
     </recent_temporary>
   </component>
@@ -187,13 +176,6 @@
       <workItem from="1716017897857" duration="3438000" />
       <workItem from="1716053040333" duration="1116000" />
       <workItem from="1716060260792" duration="3493000" />
-      <workItem from="1716222393488" duration="5836000" />
-      <workItem from="1716272760791" duration="2575000" />
-      <workItem from="1716306594581" duration="1987000" />
-      <workItem from="1716402776627" duration="1845000" />
-      <workItem from="1716443523446" duration="628000" />
-      <workItem from="1716477629478" duration="11989000" />
-      <workItem from="1716573272379" duration="4981000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -348,7 +330,6 @@
     <MESSAGE value="жоска прихардкодил бота" />
     <MESSAGE value="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать" />
     <MESSAGE value="продолжаем мучать мультипоток, 144 секунды на парс сайт" />
-    <MESSAGE value="гм у персонажей и пачек, дата в углу таблицы" />
-    <option name="LAST_COMMIT_MESSAGE" value="гм у персонажей и пачек, дата в углу таблицы" />
+    <option name="LAST_COMMIT_MESSAGE" value="продолжаем мучать мультипоток, 144 секунды на парс сайт" />
   </component>
 </project>

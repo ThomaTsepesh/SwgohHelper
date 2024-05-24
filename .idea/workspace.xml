@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="продолжаем мучать мультипоток, 144 секунды на парс сайт">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" afterDir="false" />
-    </list>
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="гм у персонажей и пачек, дата в углу таблицы" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="GPforCharacters" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -121,10 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.SWHelperBotKt" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="Kotlin.SwgohggCrawlerKt" />
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="Kotlin.SWHelperBotKt" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716062043095</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="гм у персонажей и пачек, дата в углу таблицы">
+      <option name="closed" value="true" />
+      <created>1716580557933</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716580557933</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,6 +340,7 @@
     <MESSAGE value="жоска прихардкодил бота" />
     <MESSAGE value="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать" />
     <MESSAGE value="продолжаем мучать мультипоток, 144 секунды на парс сайт" />
-    <option name="LAST_COMMIT_MESSAGE" value="продолжаем мучать мультипоток, 144 секунды на парс сайт" />
+    <MESSAGE value="гм у персонажей и пачек, дата в углу таблицы" />
+    <option name="LAST_COMMIT_MESSAGE" value="гм у персонажей и пачек, дата в углу таблицы" />
   </component>
 </project>

@@ -14,7 +14,7 @@ class CrawlerSWgohGG {
 
     companion object {
         private var linkCounter = AtomicInteger(0)
-        private const val maxAttempts = 5
+        const val maxAttempts = 5
 
         suspend fun getPlayers(allyCode: UInt): MutableList<Player> {
 

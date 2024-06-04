@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keywords" content>
+    <meta name="author" content>
+    <title>Login &middot; SWGOH.GG</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+    <link type="text/css" href="https://assets.swgoh.gg/files/libs.c23a0018201e836bb467.min.css" rel="stylesheet"/>
+    <link type="text/css" href="https://assets.swgoh.gg/files/main.daba75f1c803f659be7e.min.css" rel="stylesheet"/>
+    <style>
+        form h1, form p {
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="registration-body">
+<div class="container-fluid container-fill-height">
+    <div class="container-content-middle">
+        <form class="login m-x-auto text-center app-login-form" method="POST" action="/accounts/login/">
+            <a href="/" class="app-brand" tabindex="-1">
+                <img src="//swgoh.gg/static/logos/swgohgg-logo-twitter-profile.png" alt="brand">
+            </a>
+            <input type="hidden" name="csrfmiddlewaretoken"
+                   value="rYBEJoPpybGjMQXRMYB51aRAaRtiVtF222DSPr33gxS5krIxgGbYgMCuabv5DYWZ">
+            <div class="form-group">
+                <input class="form-control" id="id_login" maxlength="40" name="login" type="text" placeholder="Username"
+                       value autofocus>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="id_password" name="password" type="password" placeholder="Password">
+            </div>
+            <input type="hidden" name="next" value="/p/OQfcIgv6TdK44DK6_E00oA/trigger-guild-sync/"/>
+            <div class="m-b-lg">
+                <button class="primaryAction btn btn-primary pull-right" type="submit">Sign In</button>
+                <a class="btn btn-default pull-left" href="/accounts/signup/">Sign up</a><br/>
+                <p class="m-t-md">
+                    <a style="color: #fff;" href="/accounts/password/reset/">Forgot your password?</a>
+                </p>
+                <hr/>
+                <a class="btn btn-default" href="/">Back To Site</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="//swgoh.gg/static/bootstrap/js/jquery.min.js"></script>
+<script>
+    // execute/clear BS loaders for docs
+    $(function () {
+        if (window.BS && window.BS.loader && window.BS.loader.length) {
+            while (BS.loader.length) {
+                (BS.loader.pop())()
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@ import com.kotlindiscord.kord.extensions.commands.Arguments
 import com.kotlindiscord.kord.extensions.commands.converters.impl.int
 import com.kotlindiscord.kord.extensions.extensions.Extension
 import com.kotlindiscord.kord.extensions.extensions.publicSlashCommand
-import com.tsepesh.thoma.BotDataHelper
+import com.tsepesh.thoma.bot.BotDataHelper
 
 class ParseData: Extension() {
     override val name = "parseData"
@@ -14,9 +14,8 @@ class ParseData: Extension() {
             name = "parseData"
             description = "Parse data."
             action {
-                BotDataHelper.parseData(arguments.allycode)
                 respond {
-                    content = "data received"
+                    content = "data received. ${BotDataHelper.parseData(arguments.allycode)}"
                 }
             }
         }

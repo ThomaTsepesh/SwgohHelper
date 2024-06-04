@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="гм у персонажей и пачек, дата в углу таблицы" />
+    <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="отметка красным изменение данных">
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-05-16T214618.200.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/JsonHelper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/BotDataHelper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/Teams.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddCharsToSheet.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddPlayerToSheet.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddToTeam.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/GetAllTeams.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/GetTeam.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/PaintChanges.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/PoslePar.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-25.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-26.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-27.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-28.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-30.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-06-02.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/BotDataHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddCharToSheet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddCharToSheet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddTeamToSheet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddTeamToSheet.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/ParseData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/ParseData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/UpdateCharData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/UpdateCharData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-20.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,9 +128,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.MainKt">
-    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tsepesh.thoma.MainKt" />
       <module name="SwgohHelper.main" />
@@ -113,19 +142,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SwgohggCrawlerKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tsepesh.thoma.SwgohggCrawlerKt" />
-      <module name="SwgohHelper.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.SWHelperBotKt" />
-        <item itemvalue="Kotlin.SwgohggCrawlerKt" />
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="Kotlin.SWHelperBotKt" />
       </list>
     </recent_temporary>
@@ -178,6 +197,26 @@
       <workItem from="1716017897857" duration="3438000" />
       <workItem from="1716053040333" duration="1116000" />
       <workItem from="1716060260792" duration="3493000" />
+      <workItem from="1716658563315" duration="7347000" />
+      <workItem from="1716736059535" duration="3209000" />
+      <workItem from="1716813597057" duration="1071000" />
+      <workItem from="1716825874218" duration="7858000" />
+      <workItem from="1716912796377" duration="14239000" />
+      <workItem from="1717007746442" duration="3491000" />
+      <workItem from="1717075646342" duration="294000" />
+      <workItem from="1717081214022" duration="11000" />
+      <workItem from="1717082237636" duration="1249000" />
+      <workItem from="1717090117894" duration="3276000" />
+      <workItem from="1717135355061" duration="1581000" />
+      <workItem from="1717161052005" duration="596000" />
+      <workItem from="1717174863923" duration="11216000" />
+      <workItem from="1717243020530" duration="15166000" />
+      <workItem from="1717268781943" duration="9949000" />
+      <workItem from="1717333007045" duration="4870000" />
+      <workItem from="1717420845431" duration="1203000" />
+      <workItem from="1717433514189" duration="2651000" />
+      <workItem from="1717438448149" duration="7789000" />
+      <workItem from="1717522788785" duration="3008000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -299,7 +338,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716580557933</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="гм у персонажей и пачек, дата в углу таблицы">
+      <option name="closed" value="true" />
+      <created>1716580674531</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716580674531</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +388,7 @@
     <MESSAGE value="сам уже не помню, что прикрутил. кажется обновление строка в таблице начал делать" />
     <MESSAGE value="продолжаем мучать мультипоток, 144 секунды на парс сайт" />
     <MESSAGE value="гм у персонажей и пачек, дата в углу таблицы" />
-    <option name="LAST_COMMIT_MESSAGE" value="гм у персонажей и пачек, дата в углу таблицы" />
+    <MESSAGE value="отметка красным изменение данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="отметка красным изменение данных" />
   </component>
 </project>

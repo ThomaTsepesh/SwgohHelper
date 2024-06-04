@@ -28,6 +28,9 @@ data class Character(
     fun getCharStats(): String {
         return "${stars},${charGP},${gear},${omic},${zeta}"
     }
+    fun getCharListStats(): MutableList<String>{
+        return mutableListOf(stars.toString(), charGP.toString(), gear, omic.toString(), zeta.toString())
+    }
 
     override fun toString(): String {
         return "$idName: Stars($stars), ${if (isRelic(gear)) "Relict(${gear.toInt()})" else "Gear($gear)"} Omics($omic), Zetas($zeta)"
@@ -61,5 +64,13 @@ data class Team(
     fun addChar(charName: String) {
         if (charList.size < 5)
             charList.add(charName)
+    }
+    override fun toString(): String {
+        return charList.joinToString(",")
+    }
+    companion object {
+        fun toTeam(team: String): Team {
+            return Team(team.split(",").toMutableList())
+        }
     }
 }

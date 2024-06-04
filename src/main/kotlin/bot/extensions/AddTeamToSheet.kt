@@ -4,34 +4,32 @@ import com.kotlindiscord.kord.extensions.commands.Arguments
 import com.kotlindiscord.kord.extensions.commands.converters.impl.string
 import com.kotlindiscord.kord.extensions.extensions.Extension
 import com.kotlindiscord.kord.extensions.extensions.publicSlashCommand
-import com.tsepesh.thoma.BotDataHelper
+import com.tsepesh.thoma.bot.BotDataHelper
 
 class AddTeamToSheet: Extension() {
-    override val name: String = "Add New Sheet Team"
+    override val name = "AddTeamToSheet"
+
     override suspend fun setup() {
-        publicSlashCommand(::AddNewTeamSheetArguments){
+        publicSlashCommand(::AddTeamToSheetArguments) {
             name = "addTeamToSheet"
-            description = "add data"
+            description = "Adds a team to sheet"
             action {
-                BotDataHelper.addTeamToSheet(arguments.sheetName, arguments.charsName, arguments.isNewSheet.toBoolean())
-                respond {
-                    content = "data has been added to the table"
-                }
+                BotDataHelper.addTeamToSheet(arguments.sheetName, arguments.isNewSheet.toBoolean(), arguments.teamName)
             }
         }
     }
-    inner class AddNewTeamSheetArguments : Arguments() {
+    inner class AddTeamToSheetArguments : Arguments() {
         val sheetName by string {
-            name = "sheetname"
+            name = "sheet-name"
             description = "The sheet to add"
         }
         val isNewSheet by string {
-            name = "isnewsheet"
+            name = "is-new-sheet"
             description = "True - If you want to add this char to new team sheet"
         }
-        val charsName by string {
-            name = "charsname"
-            description = "Characters name(char1,char2...)"
+        val teamName by string {
+            name = "team-name"
+            description = "Team name"
         }
     }
 }

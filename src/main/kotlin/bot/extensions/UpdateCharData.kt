@@ -5,7 +5,7 @@ import com.kotlindiscord.kord.extensions.commands.converters.impl.int
 import com.kotlindiscord.kord.extensions.extensions.Extension
 import com.kotlindiscord.kord.extensions.extensions.publicSlashCommand
 import com.kotlindiscord.kord.extensions.commands.converters.impl.string
-import com.tsepesh.thoma.BotDataHelper
+import com.tsepesh.thoma.bot.BotDataHelper
 
 class UpdateCharData: Extension() {
     override val name = "updateCharData"
@@ -16,9 +16,9 @@ class UpdateCharData: Extension() {
             description = "Update char data"
             action {
                 val char = BotDataHelper.getCharacter(arguments.allyCode, arguments.charName)
-                if (char != null) {
-                    BotDataHelper.updateCharacterData(arguments.sheetName, arguments.playerName, char, arguments.charPosition)
-                }
+//                if (char != null) {
+//                    BotDataHelper.updateCharacterData(arguments.sheetName, arguments.playerName, char, arguments.charPosition)
+//                }
                 respond {
                     content = "Data updated"
                 }

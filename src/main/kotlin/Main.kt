@@ -1,5 +1,7 @@
 package com.tsepesh.thoma
 
+import com.tsepesh.thoma.bot.BotDataHelper
+import kotlinx.coroutines.delay
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File
@@ -13,8 +15,8 @@ suspend fun main() {
     var range: String
     var addSheet = false
     val spreadsheetId = "11mh87CxIl6NqAcqAtV_5IwQ-3ja4iDn5Gq8rwIv7eEU"
-        //"1Jo87ybi9OLDPqa3nqV44hukZZcQLQqy6hxez13kV72E"
-        // сопы "1d32Vdx92x65MUQ4dpeT-Q6lY5xJFitt8eyk5H3XcWo8" // наши
+    //"1Jo87ybi9OLDPqa3nqV44hukZZcQLQqy6hxez13kV72E"
+    // сопы "1d32Vdx92x65MUQ4dpeT-Q6lY5xJFitt8eyk5H3XcWo8" // наши
     var filePath = "Не задана"
     val dataPath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\data"
     val allyCode = 849418263u
@@ -25,9 +27,16 @@ suspend fun main() {
 
     // не сохраняет базу, пока программа запущена
     // поменять все пути файлов под себя. для меня пока и такие нормально
+    //BotDataHelper.addTeamToSheet("ful2", true, "fulcrum")
+    //delay(10000)
+    val team = Team.toTeam("ahsoka-tano-fulcrum")
+    val color = BotDataHelper.calculateDiff(team, "2ful")
+    //println(BotDataHelper.getCellCoordinates(1, 0))
+    println(color)
+    //delay(100000)
+    //BotDataHelper.paintSheet("ful2", color)
 
-
-    println("\nВведите дату нужной базы(пример даты: 2024-05-03)\n")
+    /*    println("\nВведите дату нужной базы(пример даты: 2024-05-03)\n")
 
     val input = readln()
     if (Files.exists(Paths.get("${dataPath}\\GuildPlayers${input}.json"))) {
@@ -103,7 +112,7 @@ suspend fun main() {
 //                                }
 //                            }
 //                        }
-                        val data = ParserHelper.parseCsvFile(ConverterJsonToCsv.convertTeam(filePath, team))
+                        val data = JsonHelper.parseTeam(filePath, team)
                         if (data.isNotEmpty()) {
                             if (addSheet) {
                                 sheetsService.createSheet(spreadsheetId, range)
@@ -132,7 +141,7 @@ suspend fun main() {
                     "2" -> {
                         println("   Введите имя чара")
                         val charName = readln()
-                        val data = ParserHelper.parseCsvFile(ConverterJsonToCsv.convertChar(filePath, charName))
+                        val data = JsonHelper.parseChar(filePath, charName)
                         if (data.isNotEmpty()) {
                             if (addSheet) {
                                 sheetsService.createSheet(spreadsheetId, range)
@@ -221,4 +230,6 @@ suspend fun main() {
             }
         }
     }
+}
+*/
 }

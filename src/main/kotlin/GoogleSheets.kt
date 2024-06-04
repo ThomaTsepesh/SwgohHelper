@@ -6,15 +6,14 @@ import com.google.api.client.json.jackson2.JacksonFactory
 import com.google.api.services.sheets.v4.Sheets
 import com.google.api.services.sheets.v4.SheetsScopes
 import com.google.api.services.sheets.v4.model.*
+import com.google.api.services.sheets.v4.model.Color
 import java.io.FileInputStream
 
 class GoogleSheets {
     private val applicationName = "Google Sheets API Kotlin Quickstart"
     private val jsonPath = "C:\\Users\\1\\IdeaProjects\\SwgohHelper\\src\\main\\kotlin\\SwgohHelperToken.json"
     private val scopes = listOf(SheetsScopes.SPREADSHEETS)
-    lateinit var service: Sheets
-// hera-syndulla,captain-rex,kanan-jarrus,chopper,sabine-wren
-    //captain-phasma,first-order-executioner,first-order-tie-pilot,first-order-sf-tie-pilot,kylo-ren
+    private lateinit var service: Sheets
     init {
         initializeService()
     }
@@ -35,7 +34,10 @@ class GoogleSheets {
         val addSheetRequest = AddSheetRequest().setProperties(
             SheetProperties().setTitle(sheetTitle)
         )
-
+        if (sheetExists(spreadsheetId, sheetTitle)){
+            println("a sheet with this name exists")
+            return
+        }
         val request = Request().setAddSheet(addSheetRequest)
         val updateRequest = BatchUpdateSpreadsheetRequest().setRequests(listOf(request))
 
@@ -43,7 +45,6 @@ class GoogleSheets {
 
         println("Sheet created")
     }
-
 
     fun appendData(spreadsheetId: String, range: String, values: List<List<Any>>) {
         val valueRange = ValueRange().setValues(values)
@@ -114,4 +115,37 @@ class GoogleSheets {
         println("Data replaced")
     }
 
+    fun sheetExists(spreadsheetId: String, sheetName: String): Boolean {
+        return getSheetId(spreadsheetId, sheetName) != null
+    }
+
+    fun readData(spreadsheetId: String, range: String): MutableList<List<Any>> {
+        val response = service.spreadsheets().values().get(spreadsheetId, "$range!A1:AB60").execute()
+        return response.getValues()
+    }
+
+    fun colorCell(spreadsheetId: String, sheetId: Int, startRowIndex: Int, endRowIndex: Int, startColumnIndex: Int, endColumnIndex: Int, color: Color?) {
+        val requests = ArrayList<Request>()
+        val cellFormat = CellFormat().setBackgroundColor(color)
+        val rowData = RowData().setValues(listOf(CellData().setUserEnteredFormat(cellFormat)))
+        val gridRange = GridRange()
+            .setSheetId(sheetId)
+            .setStartRowIndex(startRowIndex)
+            .setEndRowIndex(endRowIndex)
+            .setStartColumnIndex(startColumnIndex)
+            .setEndColumnIndex(endColumnIndex)
+
+        val updateCellsRequest = UpdateCellsRequest()
+            .setRange(gridRange)
+            .setRows(listOf(rowData))
+            .setFields("userEnteredFormat.backgroundColor")
+
+        requests.add(Request().setUpdateCells(updateCellsRequest))
+
+        val batchUpdateRequest = BatchUpdateSpreadsheetRequest().setRequests(requests)
+        service.spreadsheets().batchUpdate(spreadsheetId, batchUpdateRequest).execute()
+
+        println("Cell color updated")
+    }
 }
+

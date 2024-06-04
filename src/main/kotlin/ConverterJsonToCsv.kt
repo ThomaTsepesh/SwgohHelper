@@ -23,13 +23,26 @@ class ConverterJsonToCsv {
             return csv
         }
 
+        fun convertPlayers(jsonFilePath: String): String{
+            val json = File(jsonFilePath).readText()
+            val players = Json.decodeFromString<List<Player>>(json)
+            val csv = buildString {
+                appendLine("name,allycode")
+                players.forEach{ player ->
+                    appendLine("${player.name}, ${player.allyCode}")
+                }
+            }
+            return csv
+        }
+
         fun convertTeam(jsonFilePath: String, team: Team): String {
             val json = File(jsonFilePath).readText()
             val players = Json.decodeFromString<List<Player>>(json)
             val csv = buildString {
                 appendLine(", , , ")
                 appendLine("name,allyCode, totalGP,${team.charList.flatMap {
-                    listOf("stars", "charGP", "gear", "omic", "zeta") }.joinToString(",")}")
+                    listOf("stars", "charGP", "gear", "omic", "zeta") 
+                }.joinToString(",")}")
                 players.forEach { player ->
                     var totalGP = 0
                     val charStats = team.charList.joinToString(",") { charName ->
@@ -47,6 +60,30 @@ class ConverterJsonToCsv {
             return csv
         }
 
-//hera-syndulla,captain-rex,kanan-jarrus,chopper,sabine-wren
+        fun convertTeam(jsonFilePath: String, team: String): String {
+            val json = File(jsonFilePath).readText()
+            val charList = team.split(",")
+            val players = Json.decodeFromString<List<Player>>(json)
+            val csv = buildString {
+                appendLine(", , , ")
+                appendLine("name,allyCode, totalGP,${charList.flatMap {
+                    listOf("stars", "charGP", "gear", "omic", "zeta") }.joinToString(",")}")
+                players.forEach { player ->
+                    var totalGP = 0
+                    val charStats = charList.joinToString(",") { charName ->
+                        val char: Character? = player.chars.find { c -> c.idName == charName }
+                        if (char != null) {
+                            totalGP += char.charGP
+                            char.getCharStats()
+                        } else {
+                            ",,,,"
+                        }
+                    }
+                    appendLine("${player.name},${player.allyCode},${totalGP},${charStats}")
+                }
+            }
+            return csv
+        }
+
     }
 }

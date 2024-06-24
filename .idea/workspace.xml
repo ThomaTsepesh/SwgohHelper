@@ -5,37 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="783dffad-bf45-45d0-8fe7-fd781650cbe9" name="Changes" comment="отметка красным изменение данных">
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-05-16T214618.200.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/JsonHelper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/BotDataHelper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/Teams.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddCharsToSheet.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddPlayerToSheet.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddToTeam.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/GetAllTeams.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/GetTeam.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/PaintChanges.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/PoslePar.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-25.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-26.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-27.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-28.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-30.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-06-02.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/BotDataHelper.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ConverterJsonToCsv.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CrawlerSWgohGG.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GoogleSheets.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Player.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/SWHelperBot.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddCharToSheet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddCharToSheet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddTeamToSheet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/AddTeamToSheet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/ParseData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/ParseData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/UpdateCharData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/extensions/UpdateCharData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-05-20.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/BotDataHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/bot/BotDataHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/bot/Teams.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-06-02.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/data/GuildPlayers2024-06-17.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +23,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SwgohHelper" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -98,15 +92,15 @@
     &quot;database.data.extractors.current.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/1/IdeaProjects/SwgohHelper/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/1/IdeaProjects/SwgohHelper/build.gradle.kts&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -152,8 +146,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -217,6 +211,38 @@
       <workItem from="1717433514189" duration="2651000" />
       <workItem from="1717438448149" duration="7789000" />
       <workItem from="1717522788785" duration="3008000" />
+      <workItem from="1717526844578" duration="2036000" />
+      <workItem from="1717534214988" duration="832000" />
+      <workItem from="1718054254194" duration="3000" />
+      <workItem from="1718299273531" duration="2106000" />
+      <workItem from="1718304614789" duration="119000" />
+      <workItem from="1718381021903" duration="341000" />
+      <workItem from="1718463385185" duration="57000" />
+      <workItem from="1718463539943" duration="2822000" />
+      <workItem from="1718468402805" duration="7194000" />
+      <workItem from="1718571131747" duration="2000" />
+      <workItem from="1718643825568" duration="10024000" />
+      <workItem from="1718707902382" duration="4115000" />
+      <workItem from="1718965172365" duration="11747000" />
+      <workItem from="1718993431214" duration="57000" />
+      <workItem from="1718993491615" duration="30000" />
+      <workItem from="1718993531307" duration="61000" />
+      <workItem from="1718993601274" duration="245000" />
+      <workItem from="1718993849670" duration="32000" />
+      <workItem from="1718993909465" duration="782000" />
+      <workItem from="1718995763980" duration="530000" />
+      <workItem from="1718996470430" duration="357000" />
+      <workItem from="1718997198238" duration="575000" />
+      <workItem from="1719000183386" duration="12000" />
+      <workItem from="1719040419568" duration="695000" />
+      <workItem from="1719051951448" duration="235000" />
+      <workItem from="1719052202717" duration="5000" />
+      <workItem from="1719052210955" duration="11000" />
+      <workItem from="1719052460909" duration="1668000" />
+      <workItem from="1719062725031" duration="11424000" />
+      <workItem from="1719167428717" duration="20000" />
+      <workItem from="1719168960422" duration="1279000" />
+      <workItem from="1719252600971" duration="295000" />
     </task>
     <task id="LOCAL-00001" summary="ну в общем: парсер, пара дата классов, рабочий(наверное) класс для работы с гугл таблицами(с шарпов переписано) и пара json файлов получившихся данных">
       <option name="closed" value="true" />
@@ -346,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716580674531</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="отметка красным изменение данных">
+      <option name="closed" value="true" />
+      <created>1717526949742</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1717526949742</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -244,6 +244,9 @@ class BotDataHelper {
         suspend fun parseData(allyCode: Int): String {
             val elapsedTime = measureTimeMillis {
                 val file = Json.encodeToString(CrawlerSWgohGG.getPlayers(allyCode.toUInt()))
+                if (file.isEmpty()){
+                    println("File is empty")
+                }
                 File("$dataPath\\GuildPlayers${LocalDate.now()}.json").writeText(file)
                 println("База GuildPlayers${LocalDate.now()} сохранена ")
             }
@@ -314,7 +317,8 @@ class BotDataHelper {
                     val datePart = it.name.substring(12, 22)
                     LocalDate.parse(datePart, formatter)
                 }
-
+            println(directory)
+            println(files)
             while (daysAgo <= 14) {
                 val targetDate = LocalDate.now().minusDays(daysAgo.toLong())
 

@@ -31,10 +31,10 @@ data class Character(
     fun getCharListStats(): MutableList<String>{
         return mutableListOf(stars.toString(), charGP.toString(), gear, omic.toString(), zeta.toString())
     }
-
-    override fun toString(): String {
-        return "$idName: Stars($stars), ${if (isRelic(gear)) "Relict(${gear.toInt()})" else "Gear($gear)"} Omics($omic), Zetas($zeta)"
-    }
+//
+//    override fun toString(): String {
+//        return "$idName: Stars($stars), ${if (isRelic(gear)) "Relict(${gear.toInt()})" else "Gear($gear)"} Omics($omic), Zetas($zeta)"
+//    }
 
     private fun isRelic(gear: String): Boolean {
         return gear.all { it.isDigit() }
